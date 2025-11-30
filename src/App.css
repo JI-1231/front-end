@@ -286,37 +286,33 @@ h2 {
 }
 
 @media print {
-  /* 1. 인쇄물에 불필요한 요소 숨기기 */
   .print-button-container,
   .print-button,
-  .click-guide { /* 포트폴리오의 "클릭하세요" 문구 숨김 */
+  .click-guide {
       display: none !important;
   }
 
-  /* 2. 배경색/배경 이미지 인쇄 허용 (브라우저 설정에 따라 필요할 수 있음) */
   body {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      background-color: white; /* 인쇄 시 배경색을 흰색으로 강제 */
+      background-color: white;
   }
   
   .app-container, .document-header {
-      background-color: white !important; /* 문서 배경도 흰색으로 */
-      box-shadow: none; /* 그림자 제거 */
-      min-height: auto; /* 높이 제한 해제 */
+      background-color: white !important;
+      box-shadow: none;
+      min-height: auto;
   }
 
-  /* 3. 모달은 인쇄하지 않음 */
   .modal-overlay {
       display: none !important;
   }
 
-  /* 4. 링크 스타일 제거 (깔끔한 인쇄를 위해) */
   a {
       text-decoration: none;
       color: inherit;
   }
   a[href]:after {
-      content: ""; /* URL 표시 제거 */
+      content: "";
   }
 }
