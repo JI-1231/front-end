@@ -1,38 +1,322 @@
-.App {
-  text-align: center;
+:root {
+  --bg-page: #fff;
+  --bg-document: #f5f5dc;
+  --text-primary: #333;
+  --text-secondary: #555;
+  --accent-color: #8b7d6b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--bg-document);
+  color: var(--text-primary);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; 
 }
 
-.App-link {
-  color: #61dafb;
+.app-container {
+  display: block; 
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--bg-page);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  min-height: 100vh;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.document-header {
+  background-color: var(--bg-document);
+  padding: 50px 60px 30px 60px;
+  border-bottom: 5px solid var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile-text-info {
+    flex-grow: 1;
+}
+
+.name {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.role {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  margin: 5px 0;
+  color: var(--text-secondary);
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+.profile-id-photo {
+    width: 200px; 
+    height: 250px; 
+    object-fit: cover; 
+    border: 3px solid var(--accent-color); 
+    border-radius: 5px; 
+    margin-left: 30px; 
+    flex-shrink: 0; 
+}
+
+.document-content {
+  padding: 0 60px 50px 60px;
+}
+
+.section {
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  border-left: 5px solid var(--accent-color);
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.tagline-section {
+    background-color: #fafafa;
+    border-left: 5px solid var(--accent-color);
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tagline-main {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.tagline-sub {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.intro-text {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-line;
+}
+
+.education-item { margin-bottom: 15px; }
+.education-item h3 { font-size: 1.1rem; margin: 5px 0 0 0; }
+.period-display { font-size: 0.9rem; color: #888; margin: 0; }
+.skill-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 15px; }
+.skill-item { display: flex; flex-direction: column; align-items: center; padding: 10px 15px; background-color: #f7f7f7; border-radius: 5px; min-width: 100px; }
+.skill-name { font-weight: bold; margin-bottom: 3px; }
+.skill-level { font-size: 0.8rem; color: var(--accent-color); }
+
+
+.click-guide {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  animation: bounce 2s infinite;
+}
+
+.project-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-color: var(--accent-color);
+}
+
+.project-preview-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-preview-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.project-text-info {
+    flex-grow: 1;
+}
+
+.project-text-info h3 {
+  margin: 0 0 5px 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: #888;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 700px;
+  max-height: 80vh;
+  padding: 40px;
+  border-radius: 10px;
+  animation: fadeInScaleUp 0.3s ease-out;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-project-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-details {
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+@keyframes fadeInScaleUp {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95) translateY(20px); 
   }
-  to {
-    transform: rotate(360deg);
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-5px);}
+  60% {transform: translateY(-3px);}
+}
+
+.print-button-container {
+  padding: 10px 10px 0 60px;
+  background-color: var(--bg-page);
+  text-align: right;
+}
+
+.print-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.print-button:hover {
+  background-color: #7a6c5b;
+}
+
+@media print {
+  /* 1. 인쇄물에 불필요한 요소 숨기기 */
+  .print-button-container,
+  .print-button,
+  .click-guide { /* 포트폴리오의 "클릭하세요" 문구 숨김 */
+      display: none !important;
+  }
+
+  /* 2. 배경색/배경 이미지 인쇄 허용 (브라우저 설정에 따라 필요할 수 있음) */
+  body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background-color: white; /* 인쇄 시 배경색을 흰색으로 강제 */
+  }
+  
+  .app-container, .document-header {
+      background-color: white !important; /* 문서 배경도 흰색으로 */
+      box-shadow: none; /* 그림자 제거 */
+      min-height: auto; /* 높이 제한 해제 */
+  }
+
+  /* 3. 모달은 인쇄하지 않음 */
+  .modal-overlay {
+      display: none !important;
+  }
+
+  /* 4. 링크 스타일 제거 (깔끔한 인쇄를 위해) */
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
+  a[href]:after {
+      content: ""; /* URL 표시 제거 */
   }
 }
