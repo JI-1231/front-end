@@ -1,6 +1,6 @@
 :root {
   --bg-page: #fff;
-  --bg-document: #f5f5dc;
+  --bg-document: #e8e8cf;
   --text-primary: #333;
   --text-secondary: #555;
   --accent-color: #8b7d6b;
@@ -31,7 +31,7 @@ body {
 }
 
 .document-header {
-  background-color: var(--bg-document);
+  background-color: #f5f5dc;
   padding: 50px 60px 30px 60px;
   border-bottom: 5px solid var(--accent-color);
   margin-bottom: 30px;
