@@ -38,8 +38,8 @@ const resumeData = {
       period: "2024 하반기",
       summary: "고객에게 여행지를 추천해주는 사이트 개발",
       details: "사용자의 여행 관련 질문을 분석하여 적절한 여행지를 추천하고, 항공권 예약까지 지원하는 기능을 구현했습니다. 이 프로젝트에서 프론트엔드 개발과 웹 디자인을 주도하며 반응형 UI 설계에 주력했습니다. 주요 기술 스택은 HTML, CSS, JavaScript, React, Spring boot입니다.",
-      previewImg: "/project_travel_preview.jpg", 
-      detailImg: "/project_travel_detail.jpg" 
+      previewImg: "/front-end/project_travel_preview.jpg", 
+      detailImg: "/front-end/project_travel_detail.jpg" 
     },
     {
       id: 2,
@@ -47,8 +47,8 @@ const resumeData = {
       period: "2025 상반기",
       summary: "Unity 기반 2D 키우기 게임 개발",
       details: "Unity 엔진을 기반으로 2D 키우기 게임을 개발 중입니다. C#을 이용한 게임 로직 구현 및 애니메이션 처리를 담당하고 있습니다.",
-      previewImg: "/project_game_preview.jpg",
-      detailImg: "/project_game_detail.jpg"
+      previewImg: "/front-end/project_game_preview.jpg",
+      detailImg: "/front-end/project_game_detail.jpg"
     }
   ]
 };
@@ -87,7 +87,7 @@ function App() {
                     <p><strong>github</strong> {resumeData.profile.github}</p>
                 </div>
             </div>
-            <img src="/IDphoto.jpg" alt="Profile" className="profile-id-photo" />
+            <img src="/front-end/IDphoto.jpg" alt="Profile" className="profile-id-photo" />
         </div>
         
       </header>
